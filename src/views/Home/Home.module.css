@@ -1,0 +1,58 @@
+.homeContainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.homeContainer > h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 6rem 0 4rem 0;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.homeContainer > img {
+  margin-top: 1rem;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  width: 13rem;
+}
+
+.allListsContainer {
+  margin-top: 2rem;
+}
+
+.latestListContainer {
+  margin: 0 2rem 2rem 2.5rem;
+}
+
+.latestListContainer > h2 {
+  font-size: 1.25rem;
+}
+
+.latestRecipesContent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 830px) {
+  .latestRecipesContent {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homeContainer {
+    margin-left: 5.375rem;
+  }
+}

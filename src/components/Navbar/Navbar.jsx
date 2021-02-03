@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbarContainer}>
       <ul className={styles.navbarContent}>
-        <Link to='/home'>
+        <Link to='/'>
           <li className={styles.navbarLink}>
             <img src={home} alt='Go to home page'></img>Home
           </li>
