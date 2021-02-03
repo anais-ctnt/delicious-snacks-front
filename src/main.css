@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;800&display=swap');
+
+:root {
+  --green-background-text-color: #6cb28e;
+  --light-pink-background: #ffcad3;
+  --dark-pink-icon: #ec8d9d;
+  --dark-grey-text-color: #2c2c2c;
+  --light-grey-info-color: #d3d3d3;
+  --background: #f2f3f7;
+  --principal-font: 'Roboto', sans-serif;
+  --secondary-font: 'Abhaya Libre', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #2c2c2c;
+}
+
+h1 {
+  font-family: 'Abhaya Libre', serif;
+}
