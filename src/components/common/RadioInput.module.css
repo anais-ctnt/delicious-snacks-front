@@ -1,0 +1,12 @@
+.radioInputContainer {
+  text-align: left;
+  margin: 0.5rem;
+}
+
+.radioInputLabel {
+  color: var(--green-background-text-color);
+}
+
+.radioInput {
+  margin: 0 1rem;
+}

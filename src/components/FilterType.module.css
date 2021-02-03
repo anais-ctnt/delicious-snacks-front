@@ -1,0 +1,11 @@
+.filterType {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .filterType {
+    flex-direction: row;
+  }
+}

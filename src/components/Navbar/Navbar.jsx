@@ -10,22 +10,22 @@ export default function Navbar() {
   return (
     <nav className={styles.navbarContainer}>
       <ul className={styles.navbarContent}>
-        <Link>
+        <Link to='/home'>
           <li className={styles.navbarLink}>
             <img src={home} alt='Go to home page'></img>Home
           </li>
         </Link>
-        <Link>
+        <Link to='/profil'>
           <li className={styles.navbarLink}>
             <img src={account} alt='Go to profil page'></img>Profil
           </li>
         </Link>
-        <Link>
+        <Link to='/recipes'>
           <li className={styles.navbarLink}>
             <img src={recipes} alt='Go to all recipes'></img>Recipes
           </li>
         </Link>
-        <Link>
+        <Link to='/add-recipe'>
           <li className={styles.navbarLink}>
             <img src={addRecipes} alt='Go to add recipe'></img>Add recipe
           </li>

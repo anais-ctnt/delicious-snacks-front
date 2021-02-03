@@ -1,0 +1,34 @@
+.recipesContainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipesContainer > h1 {
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+
+.recipesFilters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+.filtersContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+  .recipesContainer {
+    margin-left: 5.375rem;
+  }
+  .recipesFilters {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
