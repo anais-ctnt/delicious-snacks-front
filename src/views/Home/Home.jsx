@@ -6,6 +6,7 @@ import CardRecipe from '../../components/CardRecipes/CardRecipe';
 import donut from '../../assets/images/donut.png';
 
 import recipes from '../../FakeRecipes';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -15,9 +16,13 @@ export default function Home() {
       <PrimaryButton>ADD RECIPE</PrimaryButton>
       <div className={styles.allListsContainer}>
         <div className={styles.latestListContainer}>
-          <h2>All recipes &gt;</h2>
+          <Link to='/recipes'>
+            <h2>All recipes &gt;</h2>
+          </Link>
+
           <RecipesList />
         </div>
+
         <div className={styles.latestListContainer}>
           <h2>Latest drinks &gt;</h2>
           <div className={styles.latestRecipesContent}>
