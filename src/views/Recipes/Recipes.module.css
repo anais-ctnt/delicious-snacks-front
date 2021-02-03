@@ -15,11 +15,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
-}
-
-.filtersContainer {
-  display: flex;
   flex-wrap: wrap;
+  margin: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -29,6 +26,6 @@
   .recipesFilters {
     flex-direction: row;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
   }
 }

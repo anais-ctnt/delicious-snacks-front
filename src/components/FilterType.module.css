@@ -1,7 +1,27 @@
+.filtersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 2rem;
+}
+
 .filterType {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 0.5rem;
+}
+
+.checkBoxContainer {
+  text-align: left;
+  margin: 0.5rem;
+}
+
+.checkBoxLabel {
+  color: var(--green-background-text-color);
+}
+
+.checkBoxInput {
+  margin: 0 1rem;
 }
 
 @media screen and (min-width: 768px) {
