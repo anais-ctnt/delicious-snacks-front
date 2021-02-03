@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: 2rem;
 }
 
 .filterType {
@@ -25,6 +24,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .filtersContainer {
+    margin-left: 2rem;
+  }
   .filterType {
     flex-direction: row;
   }
