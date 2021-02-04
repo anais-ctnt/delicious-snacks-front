@@ -49,13 +49,6 @@ export default function RecipesList() {
       });
   }, [URL]);
 
-  // recipes.filter((recipe) =>
-  //         recipe.title.toLowerCase().includes(search.toLowerCase()) ||
-  //         recipe.ingredients.toLowerCase()
-  //           .includes(search.toLowerCase()) ||
-  //         recipe.description.toLowerCase().includes(search.toLowerCase())
-  //     )
-
   return (
     <div className={styles.recipeListContainer}>
       {recipes.length !== 0
