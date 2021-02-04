@@ -9,6 +9,5 @@
 @media screen and (min-width: 830px) {
   .recipeListContainer {
     justify-content: flex-start;
-    margin: 1.5rem 5rem;
   }
 }

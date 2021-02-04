@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+  padding: 0 0.3rem 5.375rem 0.3rem;
 }
 
 .homeContainer > h1 {
@@ -20,23 +20,26 @@
   margin-top: 1rem;
   position: absolute;
   z-index: -1;
-  left: 50%;
+  left: 37%;
   width: 13rem;
 }
 
 .allListsContainer {
   margin-top: 2rem;
-}
-
-.latestListContainer {
-  margin: 0 2rem 2rem 2.5rem;
+  width: 100%;
 }
 
 .latestListContainer > h2 {
   font-size: 1.25rem;
 }
 
-.latestRecipesContent {
+.latestListContainer > a {
+  text-decoration: none;
+  color: var(--dark-grey-text-color);
+  font-size: 0.83rem;
+}
+
+.latestListContent {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -46,13 +49,22 @@
 }
 
 @media screen and (min-width: 830px) {
-  .latestRecipesContent {
+  .latestListContent {
     justify-content: flex-start;
   }
 }
 
 @media screen and (min-width: 768px) {
   .homeContainer {
-    margin-left: 5.375rem;
+    margin-left: 8.375rem;
+    padding: 0 1rem;
+  }
+
+  .latestListContainer {
+    margin: 0 2rem 2rem 2.5rem;
+  }
+
+  .homeContainer > img {
+    left: 53%;
   }
 }

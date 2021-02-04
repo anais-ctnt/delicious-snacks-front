@@ -1,14 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import PrimaryButton from '../../components/common/PrimaryButton';
-import styles from './Home.module.css';
 import RecipesList from '../../components/CardRecipes/RecipesList';
 import CardRecipe from '../../components/CardRecipes/CardRecipe';
+
+import styles from './Home.module.css';
 import donut from '../../assets/images/donut.png';
 
-import recipes from '../../FakeRecipes';
 import { Link } from 'react-router-dom';
+import ProfilPicture from '../../components/common/ProfilPicture/ProfilPicture';
 
 export default function Home() {
+  const [drinks, setDrinks] = useState([]);
+  const [snacks, setSnacks] = useState([]);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const URL = process.env.REACT_APP_SERVER_ADDRESS;
+    axios
+      .get(`${URL}/recipes/drinks`, {
+        headers: {
+          'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER_ADDRESS,
+        },
+      })
+      .then((response) => response.data)
+      .then((data) => setDrinks(data));
+
+    axios
+      .get(`${URL}/recipes/snacks`, {
+        headers: {
+          'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER_ADDRESS,
+        },
+      })
+      .then((response) => response.data)
+      .then((data) => setSnacks(data));
+
+    axios
+      .get(`${URL}/users`, {
+        headers: {
+          'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER_ADDRESS,
+        },
+      })
+      .then((response) => response.data)
+      .then((data) => setUsers(data));
+  }, []);
   return (
     <section className={styles.homeContainer}>
       <h1>DELICIOUS SNACKS</h1>
@@ -25,26 +61,27 @@ export default function Home() {
 
         <div className={styles.latestListContainer}>
           <h2>Latest drinks &gt;</h2>
-          <div className={styles.latestRecipesContent}>
-            {recipes
-              .filter((recipe) => (!recipe.snacks ? !recipe.snacks : ''))
-              .map((recipe) => (
-                <CardRecipe key={recipe.id} picture={recipe.picture} />
-              ))}
+          <div className={styles.latestListContent}>
+            {drinks.map((recipe) => (
+              <CardRecipe key={recipe.id} picture={recipe.picture} />
+            ))}
           </div>
         </div>
         <div className={styles.latestListContainer}>
           <h2>Latest snacks &gt;</h2>
-          <div className={styles.latestRecipesContent}>
-            {recipes
-              .filter((recipe) => (recipe.snacks ? recipe.snacks : ''))
-              .map((recipe) => (
-                <CardRecipe key={recipe.id} picture={recipe.picture} />
-              ))}
+          <div className={styles.latestListContent}>
+            {snacks.map((recipe) => (
+              <CardRecipe key={recipe.id} picture={recipe.picture} />
+            ))}
           </div>
         </div>
         <div className={styles.latestListContainer}>
           <h2>Chefs &gt;</h2>
+          <div className={styles.latestListContent}>
+            {users.map((user) => (
+              <ProfilPicture user={user} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
