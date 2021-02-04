@@ -3,9 +3,12 @@ import axios from 'axios';
 import styles from './RecipeDetails.module.css';
 import ProfilPicture from '../../components/common/ProfilPicture/ProfilPicture';
 import tick from '../../assets/icons/tick.svg';
+import heartNotFav from '../../assets/icons/heart.svg';
+import heartFav from '../../assets/icons/heartFav.svg';
 
 export default function RecipeDetails(props) {
   const [recipe, setRecipe] = useState({});
+  const [isFav, setIsFav] = useState(false);
   const idRecipe = props.match.params.id;
   useEffect(() => {
     const URL = process.env.REACT_APP_SERVER_ADDRESS;
@@ -49,6 +52,12 @@ export default function RecipeDetails(props) {
       </div>
 
       <div className={styles.recipeContent}>
+        <img
+          className={styles.iconFav}
+          src={isFav ? heartFav : heartNotFav}
+          alt='click to fav'
+          onClick={() => setIsFav(!isFav)}
+        />
         <h1>{recipe.title}</h1>
         <p>{recipe.ingredients}</p>
         <p className={styles.recipeDescription}>{recipe.description}</p>

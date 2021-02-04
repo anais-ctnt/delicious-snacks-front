@@ -20,17 +20,45 @@
   flex-wrap: wrap;
 }
 
+.addRecipeButton {
+  position: absolute;
+  z-index: -1;
+  margin-top: 5rem;
+  margin-left: 3rem;
+}
+
+.addRecipeImage {
+  width: 290px;
+  height: 172px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 5px;
+  z-index: -2;
+  margin: 2rem 0;
+}
+
 @media screen and (min-width: 768px) {
   .recipesContainer {
-    margin-left: 6.875rem;
+    margin-left: 5.375rem;
   }
+
   .recipesContainer > h1 {
     margin-left: 2rem;
   }
+
   .recipesFilters {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin: 3rem;
+  }
+
+  .addRecipeButton {
+    margin-left: 24rem;
+  }
+  .addRecipeImage {
+    max-width: 100%;
+    width: 936px;
+    height: 201px;
   }
 }

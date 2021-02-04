@@ -28,9 +28,9 @@
   width: 90%;
 }
 
-.recipeUsername{
-display: flex;
-align-items: center;
+.recipeUsername {
+  display: flex;
+  align-items: center;
 }
 
 .filtersType {
@@ -48,6 +48,11 @@ align-items: center;
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
+}
+
+.iconFav {
+  width: 20px;
+  align-self: flex-end;
 }
 
 .recipeContent > h1 {
@@ -90,10 +95,10 @@ align-items: center;
     height: 13rem;
   }
 
-  .recipeUsername{
+  .recipeUsername {
     flex-direction: column;
     text-align: center;
-    }
+  }
 
   .recipeContent {
     margin: 1rem 0;
