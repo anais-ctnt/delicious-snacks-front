@@ -53,7 +53,9 @@ export default function Home() {
         <section className={styles.homeContainer}>
           <h1>DELICIOUS SNACKS</h1>
           <img src={donut} alt='donut of delicious snacks' />
-          <PrimaryButton>ADD RECIPE</PrimaryButton>
+          <Link to='add-recipe'>
+            <PrimaryButton>ADD RECIPE</PrimaryButton>
+          </Link>
           <div className={styles.allListsContainer}>
             <div className={styles.latestListContainer}>
               <Link to='/recipes'>
@@ -64,7 +66,9 @@ export default function Home() {
             </div>
 
             <div className={styles.latestListContainer}>
-              <h2>Latest drinks &gt;</h2>
+              <Link to='/recipes'>
+                <h2>Latest drinks &gt;</h2>
+              </Link>
               <div className={styles.latestListContent}>
                 {drinks.map((recipe) => (
                   <Link to={`/recipes/${recipe.recipe_id}`}>
@@ -77,7 +81,9 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.latestListContainer}>
-              <h2>Latest snacks &gt;</h2>
+              <Link to='/recipes'>
+                <h2>Latest snacks &gt;</h2>
+              </Link>
               <div className={styles.latestListContent}>
                 {snacks.map((recipe) => (
                   <Link to={`/recipes/${recipe.recipe_id}`}>

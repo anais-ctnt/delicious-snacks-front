@@ -7,13 +7,16 @@ import styles from './Recipes.module.css';
 import SearchContextProvider from '../../context/SearchContext';
 import FiltersContextProvider from '../../context/FiltersContext';
 import RecipesList from '../../components/CardRecipes/RecipesList';
+import { Link } from 'react-router-dom';
 
 export default function Recipes() {
   return (
     <SearchContextProvider>
       <FiltersContextProvider>
         <section className={styles.recipesContainer}>
-          <PrimaryButton>ADD RECIPE</PrimaryButton>
+          <Link to='add-recipe'>
+            <PrimaryButton>ADD RECIPE</PrimaryButton>
+          </Link>
           <h1>All recipes</h1>
           <div className={styles.recipesFilters}>
             <Searchbar />

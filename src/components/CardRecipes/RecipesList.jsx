@@ -13,22 +13,22 @@ export default function RecipesList() {
   const { search } = useContext(SearchContext);
   const { filters } = useContext(FiltersContext);
 
-  let URL = `${process.env.REACT_APP_SERVER_ADDRESS}/recipes`;
+  let URL = `${process.env.REACT_APP_SERVER_ADDRESS}/recipes?`;
 
-  if (filters.yummi) {
-    URL += `?&yummi=${0}`;
-  }
-  if (filters.healthy) {
-    URL += `?&healthy=${1}`;
-  }
   if (filters.snacks) {
-    URL += `?&snacks=${1}`;
+    URL += `&category=snacks`;
   }
   if (filters.drinks) {
-    URL += `?&drinks=${0}`;
+    URL += `&category=drinks`;
+  }
+  if (filters.healthy) {
+    URL += `&type=healthy`;
+  }
+  if (filters.yummi) {
+    URL += `&type=yummi`;
   }
   if (search) {
-    URL += `?&searchquery=${search}`;
+    URL += `&searchquery=${search}`;
   }
 
   useEffect(() => {

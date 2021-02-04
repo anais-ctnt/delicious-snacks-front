@@ -4,10 +4,27 @@
   object-fit: cover;
   border-radius: 5px;
   margin: 0.5rem;
+  position: relative;
+  z-index: -2;
+}
+
+.cardImageLayer {
+  width: 140px;
+  height: 97px;
+  background-color: rgba(0, 0, 0, 0.295);
+  border-radius: 5px;
+  margin: 0.5rem;
+  position: absolute;
+  z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
   .cardRecipeImage {
+    width: 172px;
+    height: 119px;
+  }
+
+  .cardImageLayer {
     width: 172px;
     height: 119px;
   }

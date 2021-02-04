@@ -11,11 +11,11 @@
   width: 15.438rem;
 }
 
-input::placeholder {
+.searchbar > input::placeholder {
   color: var(--dark-pink-icon);
 }
 
-input:focus {
+.searchbar > input:focus {
   border: 0;
   outline: 0;
 }

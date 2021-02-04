@@ -37,12 +37,12 @@ export default function RecipeDetails(props) {
             <p>
               <img src={tick} />
               &nbsp;
-              {recipe.snacks ? 'Snacks' : 'Drinks'}
+              {recipe.category}
             </p>
             <p>
               <img src={tick} />
               &nbsp;
-              {recipe.healthy ? 'Healthy' : 'Yummi'}
+              {recipe.type}
             </p>
           </div>
         </div>
