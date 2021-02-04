@@ -1,18 +1,13 @@
-.cardRecipeContainer {
+.cardRecipeImage {
   width: 140px;
   height: 97px;
-  overflow: hidden;
-  margin: 0.5rem;
+  object-fit: cover;
   border-radius: 5px;
-}
-
-.cardRecipeContainer > img {
-  width: 100%;
-  height: auto;
+  margin: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
-  .cardRecipeContainer {
+  .cardRecipeImage {
     width: 172px;
     height: 119px;
   }

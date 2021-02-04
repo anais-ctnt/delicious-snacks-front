@@ -1,14 +1,10 @@
 import React from 'react';
 import styles from './ProfilPicture.module.css';
 
-export default function ProfilPicture({ user }) {
+export default function ProfilPicture({ username, picture }) {
   return (
     <div className={styles.imageCropper}>
-      <img
-        className={styles.userImage}
-        src={user.picture}
-        alt={`${user.username}`}
-      />
+      <img className={styles.userImage} src={picture} alt={username} />
     </div>
   );
 }

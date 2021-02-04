@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Home from '../views/Home/Home';
 import Recipes from '../views/Recipes/Recipes';
+import RecipeDetails from '../views/RecipeDetails/RecipeDetails';
 
 export default function Routes() {
   return (
@@ -14,9 +15,10 @@ export default function Routes() {
             <Home />
           </Route>
           <Route path='/profil'></Route>
-          <Route path='/recipes'>
+          <Route exact path='/recipes'>
             <Recipes />
           </Route>
+          <Route exact path='/recipes/:id' component={RecipeDetails} />
           <Route path='/add-recipe'></Route>
         </Switch>
       </Router>

@@ -1,7 +1,6 @@
 .imageCropper {
   width: 72px;
   height: 72px;
-  position: relative;
   overflow: hidden;
   border-radius: 50%;
   border: 0.2rem solid white;

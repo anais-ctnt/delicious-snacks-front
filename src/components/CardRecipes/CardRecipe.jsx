@@ -3,8 +3,8 @@ import styles from './CardRecipe.module.css';
 
 export default function CardRecipe({ title, picture }) {
   return (
-    <div className={styles.cardRecipeContainer}>
-      <img src={picture} alt={title}></img>
-    </div>
+    <>
+      <img className={styles.cardRecipeImage} src={picture} alt={title}></img>
+    </>
   );
 }

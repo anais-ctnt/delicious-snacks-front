@@ -6,6 +6,7 @@ import { SearchContext } from '../../context/SearchContext';
 import { FiltersContext } from '../../context/FiltersContext';
 
 import styles from './RecipesList.module.css';
+import { Link } from 'react-router-dom';
 
 export default function RecipesList() {
   const [recipes, setRecipes] = useState([]);
@@ -38,7 +39,7 @@ export default function RecipesList() {
         },
       })
       .then((response) => response.data)
-      .then((data) => setRecipes(data), console.log())
+      .then((data) => setRecipes(data))
       .catch((err) => {
         if (err.response.status === 404) {
           setRecipes([]);
@@ -53,7 +54,9 @@ export default function RecipesList() {
     <div className={styles.recipeListContainer}>
       {recipes.length !== 0
         ? recipes.map((recipe) => (
-            <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+            <Link to={`/recipes/${recipe.recipe_id}`}>
+              <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+            </Link>
           ))
         : 'Sorry no results for your search'}
     </div>

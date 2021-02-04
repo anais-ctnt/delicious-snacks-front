@@ -6,12 +6,12 @@ import FiltersContextProvider from '../../context/FiltersContext';
 import PrimaryButton from '../../components/common/PrimaryButton';
 import RecipesList from '../../components/CardRecipes/RecipesList';
 import CardRecipe from '../../components/CardRecipes/CardRecipe';
+import ProfilPicture from '../../components/common/ProfilPicture/ProfilPicture';
 
 import styles from './Home.module.css';
 import donut from '../../assets/images/donut.png';
 
 import { Link } from 'react-router-dom';
-import ProfilPicture from '../../components/common/ProfilPicture/ProfilPicture';
 
 export default function Home() {
   const [drinks, setDrinks] = useState([]);
@@ -67,7 +67,12 @@ export default function Home() {
               <h2>Latest drinks &gt;</h2>
               <div className={styles.latestListContent}>
                 {drinks.map((recipe) => (
-                  <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+                  <Link to={`/recipes/${recipe.recipe_id}`}>
+                    <CardRecipe
+                      key={recipe.recipe_id}
+                      picture={recipe.picture}
+                    />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -75,7 +80,12 @@ export default function Home() {
               <h2>Latest snacks &gt;</h2>
               <div className={styles.latestListContent}>
                 {snacks.map((recipe) => (
-                  <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+                  <Link to={`/recipes/${recipe.recipe_id}`}>
+                    <CardRecipe
+                      key={recipe.recipe_id}
+                      picture={recipe.picture}
+                    />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -83,7 +93,11 @@ export default function Home() {
               <h2>Chefs &gt;</h2>
               <div className={styles.latestListContent}>
                 {users.map((user) => (
-                  <ProfilPicture key={user.user_id} user={user} />
+                  <ProfilPicture
+                    key={user.user_id}
+                    username={user.unsername}
+                    picture={user.profil_picture}
+                  />
                 ))}
               </div>
             </div>
