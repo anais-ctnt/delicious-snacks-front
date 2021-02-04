@@ -5,16 +5,26 @@
   border-radius: 5px;
   margin: 0.5rem;
   position: relative;
-  z-index: -2;
+  z-index: -3;
 }
 
 .cardImageLayer {
   width: 140px;
   height: 97px;
-  background-color: rgba(0, 0, 0, 0.295);
+  background-color: rgba(0, 0, 0, 0.486);
   border-radius: 5px;
   margin: 0.5rem;
   position: absolute;
+  z-index: -2;
+}
+
+.cardImageTitle {
+  font-size: 0.9rem;
+  width: 155px;
+  color: white;
+  position: absolute;
+  text-align: center;
+  margin-top: 3.25rem;
   z-index: -1;
 }
 
@@ -27,5 +37,10 @@
   .cardImageLayer {
     width: 172px;
     height: 119px;
+  }
+
+  .cardImageTitle {
+    width: 185px;
+    margin-top: 4rem;
   }
 }

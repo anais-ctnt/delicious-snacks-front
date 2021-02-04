@@ -29,8 +29,13 @@
   width: 100%;
 }
 
-.latestListContainer > h2 {
-  font-size: 1.25rem;
+.latestListContainer {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.latestListContainer:first-of-type {
+  margin-bottom: -5rem;
 }
 
 .latestListContainer > a {
@@ -45,7 +50,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 1.5rem;
+  margin-left: 1.25rem;
 }
 
 @media screen and (min-width: 830px) {
@@ -61,7 +66,12 @@
   }
 
   .latestListContainer {
-    margin: 0 2rem 2rem 2.5rem;
+    margin: 2rem;
+    width: 100%;
+  }
+
+  .latestListContainer:first-of-type {
+    margin-bottom: -4.9rem;
   }
 
   .homeContainer > img {

@@ -73,6 +73,7 @@ export default function Home() {
                 {drinks.map((recipe) => (
                   <Link to={`/recipes/${recipe.recipe_id}`}>
                     <CardRecipe
+                      title={recipe.title}
                       key={recipe.recipe_id}
                       picture={recipe.picture}
                     />
@@ -88,6 +89,7 @@ export default function Home() {
                 {snacks.map((recipe) => (
                   <Link to={`/recipes/${recipe.recipe_id}`}>
                     <CardRecipe
+                      title={recipe.title}
                       key={recipe.recipe_id}
                       picture={recipe.picture}
                     />
@@ -96,7 +98,9 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.latestListContainer}>
-              <h2>Chefs &gt;</h2>
+              <Link to='/recipes'>
+                <h2>Chefs &gt;</h2>
+              </Link>
               <div className={styles.latestListContent}>
                 {users.map((user) => (
                   <ProfilPicture

@@ -55,7 +55,11 @@ export default function RecipesList() {
       {recipes.length !== 0
         ? recipes.map((recipe) => (
             <Link to={`/recipes/${recipe.recipe_id}`}>
-              <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+              <CardRecipe
+                key={recipe.recipe_id}
+                title={recipe.title}
+                picture={recipe.picture}
+              />
             </Link>
           ))
         : 'Sorry no results for your search'}
