@@ -5,7 +5,9 @@ import { FiltersContext } from '../context/FiltersContext';
 export default function FilterType() {
   const { filters, setFilters } = useContext(FiltersContext);
 
-  console.log(filters);
+  const handleChange = (e) => {
+    setFilters({ ...filters, [e.target.name]: e.target.checked });
+  };
   return (
     <div className={styles.filtersContainer}>
       <p>Filtrer :</p>
@@ -17,9 +19,7 @@ export default function FilterType() {
               type='checkbox'
               id='snacks'
               name='snacks'
-              onClick={(e) =>
-                setFilters({ ...filters, [e.target.name]: e.target.checked })
-              }
+              onClick={(e) => handleChange(e)}
             />
             Snacks
           </label>
@@ -31,11 +31,9 @@ export default function FilterType() {
               type='checkbox'
               id='drinks'
               name='drinks'
-              onClick={(e) =>
-                setFilters({ ...filters, [e.target.name]: e.target.checked })
-              }
+              onClick={(e) => handleChange(e)}
             />
-            Snacks
+            Drinks
           </label>
         </div>
       </div>
@@ -47,11 +45,9 @@ export default function FilterType() {
               type='checkbox'
               id='yummi'
               name='yummi'
-              onClick={(e) =>
-                setFilters({ ...filters, [e.target.name]: e.target.checked })
-              }
+              onClick={(e) => handleChange(e)}
             />
-            Snacks
+            Yummi
           </label>
         </div>
         <div className={styles.checkBoxContainer}>
@@ -61,11 +57,9 @@ export default function FilterType() {
               type='checkbox'
               id='healthy'
               name='healthy'
-              onClick={(e) =>
-                setFilters({ ...filters, [e.target.name]: e.target.checked })
-              }
+              onClick={(e) => handleChange(e)}
             />
-            Snacks
+            Healthy
           </label>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SearchContextProvider from '../../context/SearchContext';
+import FiltersContextProvider from '../../context/FiltersContext';
 
 import PrimaryButton from '../../components/common/PrimaryButton';
 import RecipesList from '../../components/CardRecipes/RecipesList';
@@ -46,44 +48,48 @@ export default function Home() {
       .then((data) => setUsers(data));
   }, []);
   return (
-    <section className={styles.homeContainer}>
-      <h1>DELICIOUS SNACKS</h1>
-      <img src={donut} alt='donut of delicious snacks' />
-      <PrimaryButton>ADD RECIPE</PrimaryButton>
-      <div className={styles.allListsContainer}>
-        <div className={styles.latestListContainer}>
-          <Link to='/recipes'>
-            <h2>All recipes &gt;</h2>
-          </Link>
+    <SearchContextProvider>
+      <FiltersContextProvider>
+        <section className={styles.homeContainer}>
+          <h1>DELICIOUS SNACKS</h1>
+          <img src={donut} alt='donut of delicious snacks' />
+          <PrimaryButton>ADD RECIPE</PrimaryButton>
+          <div className={styles.allListsContainer}>
+            <div className={styles.latestListContainer}>
+              <Link to='/recipes'>
+                <h2>All recipes &gt;</h2>
+              </Link>
 
-          <RecipesList />
-        </div>
+              <RecipesList />
+            </div>
 
-        <div className={styles.latestListContainer}>
-          <h2>Latest drinks &gt;</h2>
-          <div className={styles.latestListContent}>
-            {drinks.map((recipe) => (
-              <CardRecipe key={recipe.id} picture={recipe.picture} />
-            ))}
+            <div className={styles.latestListContainer}>
+              <h2>Latest drinks &gt;</h2>
+              <div className={styles.latestListContent}>
+                {drinks.map((recipe) => (
+                  <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+                ))}
+              </div>
+            </div>
+            <div className={styles.latestListContainer}>
+              <h2>Latest snacks &gt;</h2>
+              <div className={styles.latestListContent}>
+                {snacks.map((recipe) => (
+                  <CardRecipe key={recipe.recipe_id} picture={recipe.picture} />
+                ))}
+              </div>
+            </div>
+            <div className={styles.latestListContainer}>
+              <h2>Chefs &gt;</h2>
+              <div className={styles.latestListContent}>
+                {users.map((user) => (
+                  <ProfilPicture key={user.user_id} user={user} />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-        <div className={styles.latestListContainer}>
-          <h2>Latest snacks &gt;</h2>
-          <div className={styles.latestListContent}>
-            {snacks.map((recipe) => (
-              <CardRecipe key={recipe.id} picture={recipe.picture} />
-            ))}
-          </div>
-        </div>
-        <div className={styles.latestListContainer}>
-          <h2>Chefs &gt;</h2>
-          <div className={styles.latestListContent}>
-            {users.map((user) => (
-              <ProfilPicture user={user} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      </FiltersContextProvider>
+    </SearchContextProvider>
   );
 }
