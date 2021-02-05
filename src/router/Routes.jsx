@@ -12,15 +12,15 @@ export default function Routes() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path='/profil'></Route>
-          <Route exact path='/recipes'>
+          <Route path="/profil" />
+          <Route exact path="/recipes">
             <Recipes />
           </Route>
-          <Route exact path='/recipes/:id' component={RecipeDetails} />
-          <Route path='/add-recipe'>
+          <Route exact path="/recipes/:id" component={RecipeDetails} />
+          <Route path="/add-recipe">
             <AddRecipe />
           </Route>
         </Switch>

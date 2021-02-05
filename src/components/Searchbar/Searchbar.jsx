@@ -7,11 +7,11 @@ export default function Searchbar() {
   return (
     <div className={styles.searchbar}>
       <input
-        type='text'
-        placeholder='Search recipe...'
+        type="text"
+        placeholder="Search recipe..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-      ></input>
+      />
     </div>
   );
 }

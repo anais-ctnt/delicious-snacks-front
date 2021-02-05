@@ -1,3 +1,7 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -8,13 +12,13 @@ import styles from './AddRecipe.module.css';
 export default function AddRecipe() {
   const [successPost, setSuccessPost] = useState(false);
   function todayDate() {
-    let d = new Date(),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
-      year = d.getFullYear();
+    const d = new Date();
+    let month = `${d.getMonth() + 1}`;
+    let day = `${d.getDate()}`;
+    const year = d.getFullYear();
 
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
+    if (month.length < 2) month = `0${month}`;
+    if (day.length < 2) day = `0${day}`;
 
     return [year, month, day].join('-');
   }
@@ -37,8 +41,8 @@ export default function AddRecipe() {
     picture,
     category,
     type,
-    date_added,
-    user_id,
+    date_added: dateAdded,
+    user_id: userId,
   } = addRecipe;
 
   const handleChange = (e) => {
@@ -58,8 +62,8 @@ export default function AddRecipe() {
       picture &&
       category &&
       type &&
-      date_added &&
-      user_id
+      dateAdded &&
+      userId
     ) {
       axios
         .post(`${REACT_APP_SERVER_ADDRESS}/recipes`, {
@@ -69,8 +73,8 @@ export default function AddRecipe() {
           picture,
           category,
           type,
-          date_added,
-          user_id,
+          dateAdded,
+          userId,
         })
         .then((res) => res.data)
         .then(() => {
@@ -93,69 +97,85 @@ export default function AddRecipe() {
       {successPost ? <p>Your recipe has been added !</p> : ''}
       <form className={styles.addRecipeForm}>
         <div className={styles.filtersInputs}>
-          <input
-            id='snacks'
-            type='radio'
-            name='category'
-            onChange={(e) => handleChange(e)}
-          />
-          <label htmlFor='snacks'>Snacks</label>
+          <label htmlFor="snacks">
+            <input
+              id="snacks"
+              type="radio"
+              name="category"
+              onChange={(e) => handleChange(e)}
+            />
+            Snacks
+          </label>
 
-          <input
-            id='drinks'
-            type='radio'
-            name='category'
-            onChange={(e) => handleChange(e)}
-          />
-          <label htmlFor='drinks'> Drinks</label>
+          <label htmlFor="drinks">
+            <input
+              id="drinks"
+              type="radio"
+              name="category"
+              onChange={(e) => handleChange(e)}
+            />
+            Drinks
+          </label>
         </div>
 
-        <label htmlFor='title'>Title</label>
-        <input
-          id='title'
-          required
-          name='title'
-          type='text'
-          onChange={(e) => handleChange(e)}
-        />
+        <label htmlFor="title">
+          Title
+          <input
+            id="title"
+            required
+            name="title"
+            type="text"
+            onChange={(e) => handleChange(e)}
+          />
+        </label>
 
-        <label htmlFor='picture'>Picture</label>
-        <input
-          id='picture'
-          type='url'
-          name='picture'
-          onChange={(e) => handleChange(e)}
-        />
+        <label htmlFor="picture">
+          Picture
+          <input
+            id="picture"
+            type="url"
+            name="picture"
+            onChange={(e) => handleChange(e)}
+          />
+        </label>
 
-        <label htmlFor='ingredients'>Ingredients </label>
-        <textarea
-          name='ingredients'
-          id='ingredients'
-          onChange={(e) => handleChange(e)}
-        ></textarea>
-        <label htmlFor='description'>Description </label>
-        <textarea
-          name='description'
-          id='description'
-          onChange={(e) => handleChange(e)}
-        ></textarea>
+        <label htmlFor="ingredients">
+          Ingredients
+          <textarea
+            name="ingredients"
+            id="ingredients"
+            onChange={(e) => handleChange(e)}
+          />
+        </label>
+
+        <label htmlFor="description">
+          Description
+          <textarea
+            name="description"
+            id="description"
+            onChange={(e) => handleChange(e)}
+          />
+        </label>
 
         <div className={styles.filtersInputs}>
-          <input
-            id='healthy'
-            type='radio'
-            name='type'
-            onChange={(e) => handleChange(e)}
-          />
-          <label htmlFor='healthy'> Healthy</label>
-
-          <input
-            id='yummi'
-            type='radio'
-            name='type'
-            onChange={(e) => handleChange(e)}
-          />
-          <label htmlFor='yummi'> Yummi</label>
+          <label htmlFor="healthy">
+            <input
+              id="healthy"
+              type="radio"
+              name="type"
+              onChange={(e) => handleChange(e)}
+            />
+            Healthy
+          </label>
+          <label htmlFor="yummi">
+            <input
+              id="yummi"
+              type="radio"
+              name="type"
+              onChange={(e) => handleChange(e)}
+            />
+            Yummi
+          </label>
         </div>
       </form>
       <div onClick={(e) => handleSubmit(e)}>

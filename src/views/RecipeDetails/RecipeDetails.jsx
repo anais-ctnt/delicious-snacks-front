@@ -1,5 +1,9 @@
+/* eslint-disable no-console */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import styles from './RecipeDetails.module.css';
 import ProfilPicture from '../../components/common/ProfilPicture/ProfilPicture';
 import tick from '../../assets/icons/tick.svg';
@@ -9,6 +13,7 @@ import heartFav from '../../assets/icons/heartFav.svg';
 export default function RecipeDetails(props) {
   const [recipe, setRecipe] = useState({});
   const [isFav, setIsFav] = useState(false);
+  // eslint-disable-next-line react/destructuring-assignment
   const idRecipe = props.match.params.id;
   useEffect(() => {
     const URL = process.env.REACT_APP_SERVER_ADDRESS;
@@ -38,12 +43,12 @@ export default function RecipeDetails(props) {
           </div>
           <div className={styles.filtersType}>
             <p>
-              <img src={tick} />
+              <img src={tick} alt="tick icon" />
               &nbsp;
               {recipe.category}
             </p>
             <p>
-              <img src={tick} />
+              <img src={tick} alt="tick icon" />
               &nbsp;
               {recipe.type}
             </p>
@@ -55,7 +60,7 @@ export default function RecipeDetails(props) {
         <img
           className={styles.iconFav}
           src={isFav ? heartFav : heartNotFav}
-          alt='click to fav'
+          alt="click to fav"
           onClick={() => setIsFav(!isFav)}
         />
         <h1>{recipe.title}</h1>
@@ -66,3 +71,11 @@ export default function RecipeDetails(props) {
     </section>
   );
 }
+
+RecipeDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }).isRequired,
+};

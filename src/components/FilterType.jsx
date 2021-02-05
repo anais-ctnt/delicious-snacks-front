@@ -13,24 +13,24 @@ export default function FilterType() {
       <p>Filtrer :</p>
       <div className={styles.filterType}>
         <div className={styles.checkBoxContainer}>
-          <label className={styles.checkBoxLabel} htmlFor='snacks'>
+          <label className={styles.checkBoxLabel} htmlFor="snacks">
             <input
               className={styles.checkBoxInput}
-              type='checkbox'
-              id='snacks'
-              name='snacks'
+              type="checkbox"
+              id="snacks"
+              name="snacks"
               onClick={(e) => handleChange(e)}
             />
             Snacks
           </label>
         </div>
         <div className={styles.checkBoxContainer}>
-          <label className={styles.checkBoxLabel} htmlFor='drinks'>
+          <label className={styles.checkBoxLabel} htmlFor="drinks">
             <input
               className={styles.checkBoxInput}
-              type='checkbox'
-              id='drinks'
-              name='drinks'
+              type="checkbox"
+              id="drinks"
+              name="drinks"
               onClick={(e) => handleChange(e)}
             />
             Drinks
@@ -39,24 +39,24 @@ export default function FilterType() {
       </div>
       <div className={styles.filterType}>
         <div className={styles.checkBoxContainer}>
-          <label className={styles.checkBoxLabel} htmlFor='yummi'>
+          <label className={styles.checkBoxLabel} htmlFor="yummi">
             <input
               className={styles.checkBoxInput}
-              type='checkbox'
-              id='yummi'
-              name='yummi'
+              type="checkbox"
+              id="yummi"
+              name="yummi"
               onClick={(e) => handleChange(e)}
             />
             Yummi
           </label>
         </div>
         <div className={styles.checkBoxContainer}>
-          <label className={styles.checkBoxLabel} htmlFor='healthy'>
+          <label className={styles.checkBoxLabel} htmlFor="healthy">
             <input
               className={styles.checkBoxInput}
-              type='checkbox'
-              id='healthy'
-              name='healthy'
+              type="checkbox"
+              id="healthy"
+              name="healthy"
               onClick={(e) => handleChange(e)}
             />
             Healthy

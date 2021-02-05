@@ -1,3 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable no-console */
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
@@ -6,7 +9,6 @@ import { SearchContext } from '../../context/SearchContext';
 import { FiltersContext } from '../../context/FiltersContext';
 
 import styles from './RecipesList.module.css';
-import { Link } from 'react-router-dom';
 
 export default function RecipesList() {
   const [recipes, setRecipes] = useState([]);
@@ -54,15 +56,14 @@ export default function RecipesList() {
     <div className={styles.recipeListContainer}>
       {recipes.length !== 0
         ? recipes.map((recipe) => (
-            <Link to={`/recipes/${recipe.recipe_id}`}>
-              <CardRecipe
-                key={recipe.recipe_id}
-                title={recipe.title}
-                picture={recipe.picture}
-              />
-            </Link>
+            <CardRecipe
+              key={recipe.recipe_id}
+              title={recipe.title}
+              picture={recipe.picture}
+              recipeId={recipe.recipe_id}
+            />
           ))
-        : 'Sorry no results for your search'}
+        : 'Sorry there are no recipes'}
     </div>
   );
 }
