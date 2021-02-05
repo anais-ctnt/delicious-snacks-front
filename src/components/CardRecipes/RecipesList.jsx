@@ -30,7 +30,7 @@ export default function RecipesList() {
     URL += `&type=yummi`;
   }
   if (search) {
-    URL += `&searchquery=${search}`;
+    URL += `&search=${search}`;
   }
 
   useEffect(() => {
