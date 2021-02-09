@@ -178,7 +178,7 @@ export default function AddRecipe() {
           </label>
         </div>
       </form>
-      <div onClick={(e) => handleSubmit(e)}>
+      <div onClick={handleSubmit}>
         <PrimaryButton>ADD MY RECIPE</PrimaryButton>
       </div>
     </section>
